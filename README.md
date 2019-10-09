@@ -5,7 +5,7 @@
 
 Pré-requis:
 ---
-PHP + MySQL
+Docker
 
 
 Contexte:
@@ -16,7 +16,9 @@ Les visiteurs de notre site étant souvent en recherche d'emploi, nous avons sou
 Pour cela, notre partenaire - le site d'emploi Regionsjob.com - nous transmet ses offres d'emploi via un flux XML.
  
 Le code de ce petit projet permet l'import de ces offres dans notre système depuis ligne de commande.
-(`./import.sh`)
+- `./init.sh` pour initialiser le projet
+- `./run-import.sh` pour lancer l'import
+- `./clean.sh` pour nettoyer le projet (les conteneurs)
 
 Un nouveau partenaire - le site JobTeaser.com - nous propose également de rediffuser ses offres d'emploi.
 (On peut supposer qu'il y aura probablement d'autres partenaires dans le futur…)

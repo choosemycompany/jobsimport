@@ -5,11 +5,12 @@ Entry point of the project.
 To be run from the command line.
 ************************************/
 
-define('SQL_HOST', 'localhost');
-define('SQL_USER', 'root');
-define('SQL_PWD', 'root');
-define('SQL_DB', 'cmc_test');
-define('RESSOURCES_DIR', __DIR__ . '/../resources');
+define('SQL_HOST', 'mysql');
+define('SQL_USER', 'cmc_user');
+define('SQL_PWD', 'cmc_password');
+define('SQL_DB', 'cmc_db');
+define('RESSOURCES_DIR', __DIR__ . '/../resources/');
+
 
 function __autoload(string $classname) {
     include_once(__DIR__ . '/' . $classname . '.php');

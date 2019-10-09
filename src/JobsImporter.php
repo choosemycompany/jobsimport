@@ -14,7 +14,7 @@ class JobsImporter
         try {
             $this->db = new PDO('mysql:host=' . $host . ';dbname=' . $databaseName, $username, $password);
         } catch (Exception $e) {
-            die('Error : ' . $e->getMessage() . "\n");
+            die('DB error: ' . $e->getMessage() . "\n");
         }
     }
 
