@@ -1,6 +1,8 @@
 <?php
 
-class JobsLister
+declare(strict_types=1);
+
+final class JobsLister
 {
     private PDO $db;
 
@@ -16,8 +18,6 @@ class JobsLister
 
     public function listJobs(): array
     {
-        $jobs = $this->db->query('SELECT id, reference, title, description, url, company_name, publication FROM job')->fetchAll(PDO::FETCH_ASSOC);
-
-        return $jobs;
+        return $this->db->query('SELECT id, reference, title, description, url, company_name, publication FROM job')->fetchAll(PDO::FETCH_ASSOC);
     }
 }

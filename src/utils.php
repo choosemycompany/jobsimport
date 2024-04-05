@@ -1,11 +1,10 @@
 <?php
 
-function __autoload(string $classname): void
-{
+spl_autoload_register(function (string $classname) {
     include_once(__DIR__ . '/' . $classname . '.php');
-}
+});
 
-function printMessage(string $message, array $messageParamaters = []): void
+function printMessage(string $message, array $messageParameters = []): void
 {
-	echo strtr($message."\n", $messageParamaters);
+	echo strtr($message."\n", $messageParameters);
 }

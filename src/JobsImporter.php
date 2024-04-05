@@ -1,6 +1,8 @@
 <?php
 
-class JobsImporter
+declare(strict_types=1);
+
+final class JobsImporter
 {
     private PDO $db;
 
@@ -30,12 +32,12 @@ class JobsImporter
         $count = 0;
         foreach ($xml->item as $item) {
             $this->db->exec('INSERT INTO job (reference, title, description, url, company_name, publication) VALUES ('
-                . '\'' . addslashes($item->ref) . '\', '
-                . '\'' . addslashes($item->title) . '\', '
-                . '\'' . addslashes($item->description) . '\', '
-                . '\'' . addslashes($item->url) . '\', '
-                . '\'' . addslashes($item->company) . '\', '
-                . '\'' . addslashes($item->pubDate) . '\')'
+                . '\'' . addslashes((string) $item->ref) . '\', '
+                . '\'' . addslashes((string) $item->title) . '\', '
+                . '\'' . addslashes((string) $item->description) . '\', '
+                . '\'' . addslashes((string) $item->url) . '\', '
+                . '\'' . addslashes((string) $item->company) . '\', '
+                . '\'' . addslashes((string) $item->pubDate) . '\')'
             );
             $count++;
         }
